@@ -1,40 +1,58 @@
-def sayHello():
-    print("Hello World")
+from graphics import *
+import time
 
 
-def sayHello2():
-    print("Hello")
-    print("World")
+def helloWhile():
+    i = 0
+    while i < 10:
+        print("i is now", i)
+        i = i + 1
 
 
-def sayBye():
-    print("Goodbye Mars")
+def countDown():
+    i = 10
+    while i > 0:
+        print(i, "...", end=" ")
+        i = i - 1
+    print("Blast Off!")
 
 
-# TODO: Write `sayBye2` function here
+def mysteryLoop():
+    i = 1
+    while i < 1000:
+        print(i)
+        i = i * 2
+
+# Be careful! This loop will run forever!
 
 
-# A simple kilograms to ounces conversion program
-# It asks for a weight in kilograms (for example 10)
-# and converts it to ounces (352.74)
-def kilos2Ounces():
-    kilos = float(input("Enter a weight in kilograms: "))
-    ounces = kilos * 35.274
-    print("The weight in ounces is", ounces)
+def infiniteLoop():
+    i = 0
+    while i < 10:
+        print(i)
 
 
-def count():
-    for number in range(10):
-        print("Number is now: ", number)
+# For exercise 2
+def trafficLights():
+    win = GraphWin()
+    red = Circle(Point(100, 50), 20)
+    red.setFill("red")
+    red.draw(win)
+    amber = Circle(Point(100, 100), 20)
+    amber.setFill("black")
+    amber.draw(win)
+    green = Circle(Point(100, 150), 20)
+    green.setFill("black")
+    green.draw(win)
+    while True:
+        pass
+        # remove the pass and add your code here
 
 
-# A simple euros to pounds conversion program
-# It asks for a value in euros (for example 10)
-# and converts it to pounds (8.7)
-def euros2Pounds():
-    euros = float(input("Enter a value in euros: "))
-    pounds = euros * 0.87
-    print("The value in pounds is", pounds)
+# For exercise 6
+def fahrenheit2Celsius(fahrenheit):
+    return (fahrenheit - 32) * 5 / 9
 
 
-# TODO: Write `dollars2Pounds` and the rest of your solutions for the programming exercises here
+def celsius2Fahrenheit(celsius):
+    return 9 / 5 * celsius + 32
