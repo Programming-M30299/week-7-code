@@ -2,13 +2,6 @@ from graphics import *
 import time
 
 
-def helloWhile():
-    i = 0
-    while i < 10:
-        print("i is now", i)
-        i = i + 1
-
-
 def countDown():
     i = 10
     while i > 0:
@@ -17,47 +10,62 @@ def countDown():
     print("Blast Off!")
 
 
-def mysteryLoop():
-    i = 1
-    while i < 1000:
-        print(i)
-        i = i * 2
+# Note: msg == "" needs to appear twice here
+def getString1():
+    msg = ""
+    while msg == "":
+        msg = input("Enter a non-empty string: ")
+        if msg == "":
+            print("You didn't enter anything!")
+    return msg
 
-# Be careful! This loop will run forever!
 
-
-def infiniteLoop():
-    i = 0
-    while i < 10:
-        print(i)
+def getString2():
+    while True:
+        msg = input("Enter a non-empty string: ")
+        if msg != "":
+            break
+        print("You didn't enter anything!")
+    return msg
 
 
 def addUpNumbers1():
     total = 0
-    moreNumbers = "y"
-    while moreNumbers == "y":
+    more = "y"
+    while more == "y":  # The loop runs while `more` is "y"
         number = int(input("Enter a number "))
         total = total + number
-        moreNumbers = input("Any more numbers? ")
+        more = input("Any more numbers? ")
     print("The total is", total)
 
 
 def addUpNumbers2():
     total = 0
     number = int(input("Number (0 to stop): "))
-    while number != 0:
+    while number != 0:  # The loop runs while `number` is not 0
         total = total + number
-        number = eval(input("Number (0 to stop): "))
+        number = int(input("Number (0 to stop): "))
     print("The total is", total)
 
 
 def addUpNumbers3():
     total = 0
-    nStr = input("Number (return to stop): ")
-    while nStr != "":
-        number = eval(nStr)
+    nStr = input("Number (hit enter to stop): ")
+    while nStr != "":  # The loop runs while `nStr` is not empty
+        number = int(nStr)  # Assumes that `nStr` contains a number
         total = total + number
-        nStr = input("Number (return to stop): ")
+        nStr = input("Number (hit enter to stop): ")
+    print("The total is", total)
+
+
+def addUpNumbers4():
+    total = 0
+    while True:  # The loop runs until we break it
+        nStr = input("Number (anything else to stop): ")
+        if not nStr.isdigit():
+            break  # Break the loop if `nStr` is not a number
+        number = int(nStr)
+        total = total + number
     print("The total is", total)
 
 
