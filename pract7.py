@@ -1,5 +1,4 @@
 from graphics import *
-import time
 
 
 def countDown():
