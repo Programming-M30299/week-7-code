@@ -82,7 +82,7 @@ def trafficLights():
     green.draw(win)
     while True:
         pass
-        # remove the pass and add your code here
+        # remove the `pass` and add your code here
 
 
 # For exercise 6
