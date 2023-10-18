@@ -69,46 +69,6 @@ def addUpNumbers4():
     print("The total is", total)
 
 
-# For the worked example
-def drawCircle(win, centre, radius, colour):
-    circle = Circle(centre, radius)
-    circle.setFill(colour)
-    circle.setWidth(2)
-    circle.draw(win)
-
-
-def drawColouredEye(win, centre, radius, colour):
-    drawCircle(win, centre, radius, "white")
-    drawCircle(win, centre, radius / 2, colour)
-    drawCircle(win, centre, radius / 4, "black")
-
-
-def getRadius():
-    while True:
-        radius = int(input("Enter the radius of each eye: "))
-        if radius >= 20:
-            break
-        print("The radius must be at least 20")
-    return radius
-
-
-def drawBoxOfEyes():
-    radius = getRadius()
-    diameter = radius * 2
-    size = diameter * 3
-    win = GraphWin("Eyes", size, size)
-    for x in range(radius, size, diameter):
-        for y in range(radius, size, diameter):
-            centre = Point(x, y)
-            if x < size / 2 and y < size / 2 or x > size / 2 and y > size / 2:
-                colour = "blue"
-            elif x > size / 2 and y < size / 2 or x < size / 2 and y > size / 2:
-                colour = "brown"
-            else:
-                colour = "green"
-            drawColouredEye(win, centre, radius, colour)
-
-
 # For exercise 2
 def trafficLights():
     win = GraphWin()
