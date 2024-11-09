@@ -1,7 +1,14 @@
-from graphics import *
+from graphix import Window, Circle, Point
 
 
-def countDown():
+def hello_while():
+    i = 0
+    while i < 10:
+        print("i is now", i)
+        i = i + 1
+
+
+def countdown():
     i = 10
     while i > 0:
         print(i, "...", end=" ")
@@ -9,8 +16,56 @@ def countDown():
     print("Blast Off!")
 
 
-# Note: msg == "" needs to appear twice here
-def getString1():
+def mystery_loop():
+    i = 1
+    # Be careful! This loop will run forever!
+    while i < 1000:
+        print(i)
+        i = i * 2
+
+
+def add_up_numbers1():
+    total = 0
+    more_numbers = "y"
+    while more_numbers == "y":
+        number = int(input("Enter a number "))
+        total = total + number
+        more_numbers = input("Any more numbers? ")
+    print("The total is", total)
+
+
+def add_up_numbers2():
+    total = 0
+    number = int(input("Number (0 to stop): "))
+    while number != 0:
+        total = total + number
+        number = int(input("Number (0 to stop): "))
+    print("The total is", total)
+
+
+def add_up_numbers3():
+    total = 0
+    n_str = input("Number (hit enter to stop): ")
+    while n_str != "":
+        number = int(n_str)
+        total += number
+        n_str = input("Number (hit enter to stop): ")
+    print("The total is", total)
+
+
+def add_up_numbers4():
+    total = 0
+    while True:
+        n_str = input("Number (anything else to stop): ")
+        if not n_str.isdigit():
+            break  # Exit the loop if the input is not a number
+        number = int(n_str)
+        total += number
+    print("The total is", total)
+
+
+# Note: msg == "" needs to appear twice
+def get_string1():
     msg = ""
     while msg == "":
         msg = input("Enter a non-empty string: ")
@@ -19,7 +74,7 @@ def getString1():
     return msg
 
 
-def getString2():
+def get_string2():
     while True:
         msg = input("Enter a non-empty string: ")
         if msg != "":
@@ -28,67 +83,28 @@ def getString2():
     return msg
 
 
-def addUpNumbers1():
-    total = 0
-    more = "y"
-    while more == "y":  # The loop runs while `more` is "y"
-        number = int(input("Enter a number "))
-        total = total + number
-        more = input("Any more numbers? ")
-    print("The total is", total)
+def can_apply_for_job(degree, experience):
+    if (degree == "1st" or degree == "2:1") and experience >= 1:
+        return True
+    elif degree == "2:2" and experience >= 2:
+        return True
+    else:
+        return False
 
 
-def addUpNumbers2():
-    total = 0
-    number = int(input("Number (0 to stop): "))
-    while number != 0:  # The loop runs while `number` is not 0
-        total = total + number
-        number = int(input("Number (0 to stop): "))
-    print("The total is", total)
+def can_vote1():
+    age = int(input("How old are you? "))
+    while age <= 18:
+        print("Wait until you are 18!")
+        age = int(input("How old are you? "))
 
 
-def addUpNumbers3():
-    total = 0
-    nStr = input("Number (hit enter to stop): ")
-    while nStr != "":  # The loop runs while `nStr` is not empty
-        number = int(nStr)  # Assumes that `nStr` contains a number
-        total = total + number
-        nStr = input("Number (hit enter to stop): ")
-    print("The total is", total)
-
-
-def addUpNumbers4():
-    total = 0
-    while True:  # The loop runs until we break it
-        nStr = input("Number (anything else to stop): ")
-        if not nStr.isdigit():
-            break  # Break the loop if `nStr` is not a number
-        number = int(nStr)
-        total = total + number
-    print("The total is", total)
-
-
-# For exercise 2
-def trafficLights():
-    win = GraphWin()
-    red = Circle(Point(100, 50), 20)
-    red.setFill("red")
-    red.draw(win)
-    amber = Circle(Point(100, 100), 20)
-    amber.setFill("black")
-    amber.draw(win)
-    green = Circle(Point(100, 150), 20)
-    green.setFill("black")
-    green.draw(win)
+def can_vote2():
     while True:
-        pass
-        # remove the `pass` and add your code here
+        age = int(input("How old are you? "))
+        if age > 18:
+            break
+        print("Wait until you are 18!")
 
 
-# For exercise 6
-def fahrenheit2Celsius(fahrenheit):
-    return (fahrenheit - 32) * 5 / 9
-
-
-def celsius2Fahrenheit(celsius):
-    return 9 / 5 * celsius + 32
+# Solutions to the programming exercises:
