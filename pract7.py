@@ -28,7 +28,7 @@ def add_up_numbers1():
     total = 0
     more_numbers = "y"
     while more_numbers == "y":
-        number = int(input("Enter a number "))
+        number = int(input("Enter a number: "))
         total = total + number
         more_numbers = input("Any more numbers? ")
     print("The total is", total)
