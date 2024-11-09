@@ -30,7 +30,7 @@ def add_up_numbers1():
     while more_numbers == "y":
         number = int(input("Enter a number: "))
         total = total + number
-        more_numbers = input("Any more numbers? ")
+        more_numbers = input("Any more numbers? (y/n) ")
     print("The total is", total)
 
 
