@@ -106,5 +106,30 @@ def can_vote2():
             break
         print("Wait until you are 18!")
 
+#  For question 2
+
+
+def traffic_lights():
+    win = Window()
+    red = Circle(Point(100, 50), 20)
+    red.fill_colour = "red"
+    red.draw(win)
+    amber = Circle(Point(100, 100), 20)
+    amber.fill_colour = "black"
+    amber.draw(win)
+    green = Circle(Point(100, 150), 20)
+    green.fill_colour = "black"
+    green.draw(win)
+    # Complete this function
+
+# For question 6
+
+
+def farenheit_to_celsius(f):
+    return (f - 32) * 5 / 9
+
+
+def celcius_to_farenheit(c):
+    return c * 9 / 5 + 32
 
 # Solutions to the programming exercises:
