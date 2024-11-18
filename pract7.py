@@ -125,11 +125,11 @@ def traffic_lights():
 
 
 # For question 6
-def farenheit_to_celsius(f):
+def fahrenheit_to_celsius(f):
     return (f - 32) * 5 / 9
 
 
-def celcius_to_farenheit(c):
+def celsius_to_fahrenheit(c):
     return c * 9 / 5 + 32
 
 # Solutions to the programming exercises:
